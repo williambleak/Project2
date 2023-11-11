@@ -3,10 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <title>Untitled Document</title>
+<style type="text/css">
+    #thumbs, #image {
+    width: 700px;
+    border: solid 1px 000;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    color: #000;
+    background: #eee;
+    padding: 5px;
+    }
+    #thumbs {
+    margin-top: 10px;
+    }
+    #thumbs img {
+    border: solid 1px #000;
+    margin: 5px;
+    }
+    #image{
+    height:400px;
+    }
+    .instructions{
+    font-style:italic;
+    }
+    </style>
+    <script type="text/javascript">
+
+        <!-- Begin comment for older browsers//
+        var imgArray = new Array(
+        'Project6/Images/Fullsize/duckLg.jpg',
+        'Project6/Images/Fullsize/HeronLg.jpg',
+        'Project6/Images/Fullsize/PalicanLg.jpg',
+        'Project6/Images/GeeseLg.jpg'
+        );
+        var titleArray = new Array(
+        'Duck',
+        'Heron',
+        'Palican',
+        'Geese'
+        );
+        var imgPath = "Images/Fullsize/";
+        function swapImage(imgID) {
+        var theImage = document.getElementById('theImage');
+        var textDiv = document.getElementById('bottomText');
+        var newImg;
+        var textTitle;
+        newImg = imgArray[imgID];
+        theImage.src = imgPath + newImg;
+        textTitle=titleArray[imgID];
+        textDiv.innerHTML = textTitle;
+        }
+        function preloadImages() {
+        for(var i = 0; i < imgArray.length; i++) {
+        var tmpImg = new Image;
+        tmpImg.src = imgPath + imgArray[i];
+        }
+        }
+        // End comment for older browsers -->
+        
+        </script>
 </head>
-<body>
 
+<body onload="preloadImages()">
+    <div>
+    <a href=""
+    onmouseover="document.getElementById('print').src='Project6/Images/PrintButton2.jpg';"
+    onmouseout="document.getElementById('print').src='Project6/Images/PrintButton.jpg';">
+    <img src="Project6/Images/PrintButton.jpg" alt="Print Page" width="200" height="50"
+    id="print"></a>
+    </div> 
+    <div>
+        <a href=""
+        onmouseover="document.getElementById('logo').src='Project6/Images/Logo2.jpg';"
+        onmouseout="document.getElementById('logo').src='Logo.png';
+        "> <img src="Logo.png" alt="Logo" id="logo"></a> </div>
+        
+        <p class="instructions">
 
- 
+        <div id="thumbs">
+            <img src="Project6/Images/Thumbnails/duckSm.jpg" alt="Duck"
+           onmouseover="swapImage(0);" />
+            <img src="Project6/Images/Thumbnails/HeronSm.jpg" alt="Heron"
+           onmouseover="swapImage(1);" />
+            <img src="Project6/Images/Thumbnails/PalicanSm.jpg" alt="HummingBird"
+           onmouseover="swapImage(2);" />
+            <img src="Project6/Images/GeeseSm.jpg" alt="Geese"
+           onmouseover="swapImage(3);" />
+           <br />
+        
+        </div>
+           
+        <div id="image">
+            <img id="theImage" src="Images/FullSize/Image1Lg.jpg" alt="Bald Eagle" />
+            <h3 id="bottomText">Brave Bald Eagle</h3>
+        </div> 
+<p>
+The content of the document goes here . . .
+</p>
+
 </body>
 </html>
